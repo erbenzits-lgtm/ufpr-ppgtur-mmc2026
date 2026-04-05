@@ -44,12 +44,14 @@
         </header>
 
         <form id="surveyForm" class="bg-white rounded-[2.5rem] shadow-xl border border-slate-200 overflow-hidden">
-            <!-- Banner de Abertura -->
+            <!-- Banner de Abertura Blindado Legalmente -->
             <div class="bg-slate-900 p-10 text-white text-center">
-                <i data-lucide="shield-check" class="mx-auto mb-4 text-blue-400 w-10 h-10"></i>
+                <div class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 border border-emerald-500/30">
+                    Pesquisa de Opinião Pública (Anônima)
+                </div>
                 <h2 class="text-2xl font-extrabold mb-2">Levantamento de Dados Acadêmicos</h2>
                 <p class="text-slate-400 text-sm leading-relaxed max-w-sm mx-auto italic">
-                    Pesquisa científica sobre as transformações do MMC ao longo do tempo. As suas respostas são anônimas.
+                    Estudo sobre as transformações do MMC ao longo do tempo. Conforme diretrizes éticas, <strong>não coletamos e-mails, endereços de IP ou dados sensíveis</strong>.
                 </p>
             </div>
 
@@ -140,6 +142,27 @@
                     </div>
                 </section>
 
+                <!-- SEÇÃO 4: TERMO DE CONSENTIMENTO E ÉTICA (ATUALIZADO) -->
+                <section class="space-y-4 pt-6 border-t border-slate-50">
+                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200 text-sm text-slate-600">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <i data-lucide="shield" class="w-5 h-5 text-blue-600"></i> Termo de Consentimento Livre e Esclarecido (TCLE)
+                        </h4>
+                        <p class="mb-5 text-xs leading-relaxed text-justify">
+                            Declaro que fui devidamente informado(a) sobre os objetivos desta pesquisa vinculada ao Mestrado em Turismo (PPGTUR/UFPR). Confirmo que a minha participação é voluntária e que se trata de uma <strong>Pesquisa de Opinião Pública com participantes não identificados</strong>. Estou ciente de que o sistema da pesquisa foi configurado para garantir o meu total anonimato, garantindo que <strong>não sejam coletados endereços de e-mail, registros de IP da conexão ou dados sensíveis e de identificação direta</strong> (como nome, CPF, ou número do box comercial). Por se enquadrar como pesquisa de opinião não identificada, compreendo que esta coleta de dados está amparada e <strong>dispensada de submissão ao Comitê de Ética (CEP)</strong>, conforme estabelece o Art. 1º, Parágrafo Único, incisos I e II da <strong><a href="https://conselho.saude.gov.br/resolucoes/2016/Reso510_Etica_Pesq_Humanas_Sociais.pdf" target="_blank" class="text-blue-600 hover:underline">Resolução CNS nº 510/2016</a></strong>, estando em plena conformidade com a <strong><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" class="text-blue-600 hover:underline">Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018)</a></strong>.
+                        </p>
+                        <label class="flex items-start gap-4 cursor-pointer group">
+                            <div class="relative flex items-center justify-center mt-0.5 shrink-0">
+                                <input type="checkbox" required class="peer appearance-none w-6 h-6 border-2 border-slate-300 rounded bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all cursor-pointer shadow-sm">
+                                <i data-lucide="check" class="absolute w-4 h-4 text-white opacity-0 peer-checked:opacity-100 pointer-events-none"></i>
+                            </div>
+                            <span class="text-xs md:text-sm font-bold text-slate-700 group-hover:text-blue-700 transition-colors leading-snug">
+                                Declaro que li as informações acima, compreendo a garantia de anonimato e aceito participar voluntariamente desta pesquisa de opinião pública.
+                            </span>
+                        </label>
+                    </div>
+                </section>
+
                 <button type="submit" class="w-full bg-slate-900 text-white font-black py-6 rounded-3xl shadow-2xl hover:bg-black transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
                     ENVIAR RESPOSTAS 🚀
                 </button>
@@ -205,11 +228,13 @@
             "Revistaria", "Sapataria", "Serviços", "Tabacaria", "Utilidades Domésticas"
         ];
         
+        // Perguntas Estratégicas perfeitamente alinhadas ao Panorama (Encaminhamentos 27/03)
         const questions = [
-            { id: 'qa1', label: '1. O Mercado Municipal passou por diversas mudanças físicas e de público desde a sua inauguração. Como essas transformações afetaram o dia a dia do seu negócio?' },
-            { id: 'qa2', label: '2. Como avalia a gestão da Prefeitura ao Mercado Municipal ao passar do tempo?' },
-            { id: 'qa3', label: '3. Quais estratégias considera necessárias para equilibrar o atendimento ao morador local e ao turista de forma justa?' },
-            { id: 'qa4', label: '4. O que você gostaria de mudar na gestão ou na estrutura do mercado municipal de curitiba?' }
+            { id: 'qa1', label: '1. O Mercado Municipal passou por diversas mudanças desde a sua inauguração. Como a chegada do turismo gastronômico afetou as suas vendas diárias e o perfil do seu cliente tradicional?' },
+            { id: 'qa2', label: '2. Pensando nas reformas e modernizações recentes, como isso impactou os custos de manutenção do seu negócio (taxas, aluguéis) e as regras de funcionamento do seu box?' },
+            { id: 'qa3', label: '3. Na sua visão, os investimentos e a gestão da Prefeitura dentro do Mercado focam mais em garantir o abastecimento de alimentos para a população ou em criar uma "vitrine" para atrair turistas?' },
+            { id: 'qa4', label: '4. Enquanto o interior do Mercado se modernizou, como você descreve a convivência e a segurança nas calçadas do entorno, especialmente em relação aos trabalhadores informais e pessoas em situação de rua?' },
+            { id: 'qa5', label: '5. Se você pudesse sugerir uma mudança na gestão ou estrutura do Mercado para torná-lo mais justo para o lojista e para o morador de Curitiba, qual seria?' }
         ];
 
         let mediaRecorder;
@@ -242,7 +267,6 @@
             txt.innerText = text;
             lucide.createIcons();
             
-            // Só esconde automaticamente se não for erro
             if(type !== 'error') {
                 setTimeout(() => bar.classList.add('hidden'), 5000);
             }
@@ -263,8 +287,8 @@
                 div.innerHTML = `
                     <label class="text-sm font-bold text-slate-800 leading-snug block">${q.label}</label>
                     <div class="relative">
-                        <textarea id="${q.id}" required placeholder="Clique no microfone para falar..." 
-                            class="w-full p-6 bg-slate-50 border-2 border-slate-100 rounded-3xl min-h-[160px] outline-none focus:border-blue-500 text-sm pr-16 shadow-sm transition-all"></textarea>
+                        <textarea id="${q.id}" required placeholder="Clique no microfone para falar ou digite aqui..." 
+                            class="w-full p-6 bg-slate-50 border-2 border-slate-100 rounded-3xl min-h-[140px] outline-none focus:border-blue-500 text-sm pr-16 shadow-sm transition-all"></textarea>
                         <button type="button" id="mic-${q.id}" onclick="toggleGroqRecording('${q.id}')"
                             class="absolute top-4 right-4 p-3 rounded-2xl shadow-lg transition-all bg-white text-slate-400 hover:text-blue-600 border border-slate-100">
                             <i data-lucide="mic" class="w-5 h-5"></i>
@@ -412,21 +436,35 @@
         async function callGemini(mode) {
             const output = document.getElementById('geminiOutput');
             const loader = document.getElementById('geminiLoading');
+            const btns = [document.getElementById('btnReflect'), document.getElementById('btnSuggest')];
+            
             const q1 = document.getElementById('qa1').value;
             const q2 = document.getElementById('qa2').value;
             const q3 = document.getElementById('qa3').value;
             const q4 = document.getElementById('qa4').value;
+            const q5 = document.getElementById('qa5').value;
             const ramo = document.getElementById('tipo_negocio').value;
+            
+            // O prompt foi atualizado para processar as 5 variáveis do questionário
             const prompt = mode === 'reflect' 
-                ? `Analise as respostas de um lojista de ${ramo} no MMC: Mudanças: ${q1} | Gestão: ${q2} | Desejos: ${q4}` 
-                : `Dê 3 dicas para o box de ${ramo} baseado em: Sugestões: ${q3} | Desejos: ${q4}`;
+                ? `Analise as respostas de um lojista de ${ramo} no MMC. Impacto nas vendas e cliente: ${q1} | Impacto em Custos e Regras de Operação: ${q2} | Percepção da Gestão (Abastecimento vs Turismo): ${q3} | Percepção do Entorno (Circuito Inferior e Informalidade): ${q4} | Propostas: ${q5}. Faça uma reflexão analítica (3 parágrafos) ligando isso ao circuito inferior da economia e gentrificação.` 
+                : `Dê 3 dicas práticas para o box de ${ramo} baseado no cenário real do mercado. Visão do Entorno e Segurança: ${q4} | Sugestões do Lojista: ${q5}. Foque no equilíbrio entre atrair o turista e manter o público local ativo.`;
+            
             output.classList.add('hidden');
             loader.classList.remove('hidden');
+            btns.forEach(b => b.disabled = true);
+
             try {
                 const data = await fetchWithRetry(prompt);
-                output.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Erro.";
+                output.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Erro na geração da resposta.";
                 output.classList.remove('hidden');
-            } catch (e) { output.innerText = "Falha na conexão."; output.classList.remove('hidden'); } finally { loader.classList.add('hidden'); }
+            } catch (e) { 
+                output.innerText = "Falha na conexão com a IA. Verifique a rede e tente novamente."; 
+                output.classList.remove('hidden'); 
+            } finally { 
+                loader.classList.add('hidden'); 
+                btns.forEach(b => b.disabled = false);
+            }
         }
     </script>
 </body>
